@@ -11,10 +11,9 @@ fetch(categurl)
     .then(categories => {
         categories.forEach(category => {
             appendCategory(category);
-            if (parseInt(category.id) >= currentId) {
-                currentId = parseInt(category.id) + 1;
-            }
+            currentId = categories.id;
         });
+        currentId++;
     })
     .catch(error => console.error('Error fetching categories:', error));
 
